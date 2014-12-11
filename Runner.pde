@@ -21,6 +21,9 @@ PImage title, start, highscore, curScore, scoreTitle, curHighScore;
 
 PFont font;
 
+//Letter to press
+char letter = (char)(random(0,26) + 97);
+
 //DFA, controls game state
 int[][] dfa = new int[5][3];
 int state;
@@ -179,6 +182,7 @@ void draw() {
     text(score, 800, 10);
     text(highscores.curHighScore(), 800, 80);
     textAlign(CENTER, CENTER);
+    text(""+letter,400,300);
     break;
   case EXIT_GAME:
     exit();
@@ -201,7 +205,10 @@ void keyPressed() {
     }
     break;
   case IN_GAME:
+  if(key == letter){
     player.jump();
+    letter = (char)(random(0,27) + 96);
+  }
     break;
   case HIGH_SCORE:
     if (key == '`') {

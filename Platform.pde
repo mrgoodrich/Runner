@@ -21,6 +21,7 @@ class Platform implements Collidable {
         col = color(random(25),random(25),random(128,255));
         break;
     }
+    
   }
   
   float getX() {
