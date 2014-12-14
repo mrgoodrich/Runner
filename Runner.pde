@@ -207,7 +207,7 @@ void keyPressed() {
   case IN_GAME:
   if(key == letter){
     player.jump();
-    letter = (char)(random(0,27) + 96);
+    letter = (char)(random(0,26) + 97);
   }
     break;
   case HIGH_SCORE:
